@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>reveal.js – The HTML Presentation Framework</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+        <link rel="stylesheet" href="css/reveal.css">
+        <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+        <!-- Code syntax highlighting -->
+        <link rel="stylesheet" href="lib/css/zenburn.css">
+
+        <!-- Tomas making styles -->
+		<link rel="stylesheet" href="custom.css">        
+
+        <!-- Printing and PDF exports -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1 style="transform: translate3d(250px, 215px, 0px) rotateX(0deg) rotateY(289.897deg) rotateZ(-8.01485deg)">CSS3</h1>
+                    <h3>Transformations and stuff</h3>
+
+                <article class="box demo-0 demo">
+                    <div class="demo-0-inner">
+                    <p>A not so Long Time ago, in a browser quite near you...</p>
+                 
+                    <p>CSS3, A NEW HOPE: It is a period of dull hover effects. CSS1 Enterprise Developers are striking with grey background colors and old fonts. Teamed up with dull forms and input elements, they have long ruled the fuck I don't have time for this. Lorem ipsum all the way.</p>
+
+                    <p>The Rebel Alliance has attacked the tyrannical evil Galactic Empire, daringly stealing secret plans to the Empire's new battle station, the Death Star. In the opening view, the small Rebel ship belonging to Princess Leia, who possesses the secret plans, is chased across the screen by a large, wedge-shaped Imperial Star Destroyer cruiser of the evil Galactic Empire. Turbolasers strike the Rebel ship's shields and cause its passengers to be buffeted around in a corridor, including two robot droids, a tiny, round barrel-shaped, whistling and bleeping computer robot named R2-D2 (Artoo Detoo) (Kenny Baker), and its robotic pal, the constantly talking, tall gold-plated C-3PO (See Threepio) (Anthony Daniels). [C-3PO is clearly modeled after the female robot in Lang's Metropolis (1927).] Armed soldiers run down the hallway. Nervous as explosions rock the ship, C-3PO is pessimistic about their escape from the Imperialistic Forces, because their main reactor has been shut down: "We're doomed. There'll be no escape for the Princess this time." R2-D2 whistles and bleeps a response. Their ship is sucked into the underbelly of the huge, armored space vehicle by a tractor beam.</p>
+
+                    <p>Rebel soldiers take their positions at the end of the corridor, preparing to defend the door from an assault. The crippled transport Rebel ship is boarded by an advance guard of white, ceramic-like, space-armored stormtroopers, the Emperor's elite soldiers. A fierce laser-gun battle is fought in the hallway, quickly lost by the Rebel defenders as more and more Imperials charge into the smoking corridor. When control is secured, the leader of the cruel and villainous forces appears - black-garbed, helmeted and faceless Dark Lord of the Sith, Darth Vader (David Prowse, with a deep, breathy voice supplied by James Earl Jones). The two robots escape the crossfire by running across the hallway.</p>
+
+                    <p>Fighting back against the Evil Empire is slim, white-robed Princess Leia Organa (Carrie Fisher), the leader of galactic Rebel Alliance forces. C-3PO hides from the invading troopers and loses sight of R2-D2. Turning a corner, the golden droid notices a young woman dressed in white - Princess Leia - transmitting the blueprints or plans for the Death Star battleship along with an S.O.S. plea, into the data system face plate of her computer robot R2-D2. When R2-D2 is located, C-3PO worries that they will be sent to "the spice mines of Kessel or smashed into who-knows-what!"</p>
+
+                    </div>
+                </article>
+                </section>
+
+                <section>
+                    <h3>Intro: Transform functions</h3>
+                    <ul>
+                        <li>skew</li>
+                        <li>rotate</li>
+                        <li>translate</li>
+                        <li>scale(x, y)</li>
+                        <li>perspective</li>
+                        <li>matrix</li>
+                    </ul>
+
+                </section>
+
+                <section>
+                    <h2>Episode I: Skew</h2>
+                    <pre><code data-trim data-noescape>.skew {
+    transform: skew(x, y);
+    transform: skewX(x);
+    transform: skewY(x);
+}                   </code></pre>
+                </section>
+                <section>
+                    <h3>Example: Skew x-axis</h3>
+                        <pre><code data-trim data-noescape>.skew {
+    transform: skew(-20deg);  // y not defined (0)
+    
+    // equal to
+    transform: skewX(-20deg);
+}                   </code></pre>
+                    <p class="box demo-1 demo tallbox">“I find your lack of faith disturbing.”</p>
+                </section>
+
+                <section>
+                    <h3>Example: Skew y-axis</h3>
+                        <pre><code data-trim data-noescape>.skew {
+    transform: skew(0, -25deg);  // x must be defined
+    
+    // equal to
+    transform: skewY(-25deg);
+}                   </code></pre>
+                    <p class="box demo-2 demo">“I find your lack of faith disturbing.”</p>
+                </section>
+
+                <section>
+                    <h3>Example: Skew both axis</h3>
+                        <pre><code data-trim data-noescape>.skew {
+    transform: skew(25deg, -25deg);  // note different sign
+    
+    // equal to
+    transform: skewY(-25deg) skewX(25deg);
+
+    // note: if (several transform) values must be on same line;
+}                   </code></pre>
+                    <div class="box demo-3 demo">The result is actually similar to:
+                        <pre><code data-trim data-noescape>transform: rotateZ(-25deg) scale(1.10337791896))  // 1.1033779 =~ 1/cos(25deg)
+                        </code></pre>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Episode II: Rotate</h2>
+                    <pre><code data-trim data-noescape>.rotate {
+    transform: rotate(z);  // equal to rotateZ
+    transform: rotate3d(xish, yish, zish, deg):  // skill required
+    transform: rotateX(x);
+    transform: rotateY(y);
+    transform: rotateZ(z);
+}                   </code></pre>
+                </section>
+
+                <section>
+                    <h3>Example: Rotate z-axis</h3>
+                    <pre><code data-trim data-noescape>.rotate {
+    transform: rotate(-60deg);
+
+    // equal to 
+    transform: rotateZ(-60deg);
+
+    // or
+    rotate3d(0, 0, 1, -60deg)  
+
+    // or 
+    rotate3d(0, 0, -1, 60deg)  
+}                   </code></pre>
+                    <p class="box demo-4 demo-slow">“Try not. Do… or do not. There is no try.”</p>
+                </section>
+
+                <section>
+                    <h3>Example: Rotate y-axis</h3>
+                    <pre><code data-trim data-noescape>.rotate {
+    transform: rotateY(-60deg);
+
+    // equal to 
+    rotate3d(0, 1, 0, -60deg)  
+
+    // or 
+    rotate3d(0, -1, 0, 60deg)
+}                   </code></pre>
+                    <p class="box demo-5 demo-slow">“Try not. Do… or do not. There is no try.”</p>
+                </section>
+
+               <section>
+                    <h3>Example: Rotate x-axis</h3>
+                    <pre><code data-trim data-noescape>.rotate {
+    transform: rotateX(-60deg);
+
+    // equal to 
+    rotate3d(1, 0, 0, -60deg)  
+
+    // or 
+    rotate3d(-1, 0, 0, 60deg)
+}                   </code></pre>
+                    <p class="box demo-6 demo">“Try not. Do… or do not. There is no try.”</p>
+                </section>
+
+                <section>
+                    <h3>Example: Rotate 3d</h3>
+                    <pre><code data-trim data-noescape>.rotate {
+    transform: rotate3d(1, 0, -1, 20deg);
+
+    // is NOT(!) equal to 
+    transform: rotateX(20deg) rotateZ(-20deg)
+
+    // but IS(!) equal to
+    transform: 
+
+    // Also note it goes behind the code-tag 
+    // (z-index don't matter here, 3d trumps z-index)
+}                   </code></pre>
+                    <p class="box demo-7 demo-slow">“Try not. Do… or do not. There is no try.”</p>
+                    <a href="http://stackoverflow.com/questions/15207351/rotate3d-shorthand">Help me understand?!</a>
+                </section>
+
+                <section>
+                    <h2>Episode IV: Translate</h2>
+                    <pre><code data-trim data-noescape>.translate {
+    transform: translate(x, y); 
+    transform: translate3d(xish, yish, zish, deg):  // skill required
+    transform: translateX(x);  // equal to translate(x, 0)
+    transform: translateY(y);  // equal to translate(0, y)
+    transform: translateZ(z);  // equal to translate3d(0, 0, z)
+}                   </code></pre>
+                </section>
+
+                <section>
+                    <h3>Example: TranslateX</h3>
+                     <pre><code data-trim data-noescape>.translateX {
+    transform: translateX(50%);  // length (px, em, vh, % etc)
+
+    // equal to
+    transform: translate(50%, 0);
+}                   </code></pre>
+                <div style="border: 1px solid yellow">
+                    <p class="box demo-8 demo-slow">“In my experience there is no such thing as luck.”</p>
+                </div>
+                </section>
+
+                <section>
+                    <h3>Example: TranslateY</h3>
+                     <pre><code data-trim data-noescape>.translateY {
+    transform: translateY(20vh);  // length (px, em, vh, % etc)
+
+    // equal to
+    transform: translate(0, 20vh);
+}                   </code></pre>
+                    <p class="box demo-9 demo-slow">“In my experience there is no such thing as luck.”</p>
+                </section>
+
+                <section>
+                    <h3>Example: TranslateZ</h3>
+                     <pre><code data-trim data-noescape>.translateZ {
+    transform: translateZ(20vh);  // length (px, em, vh etc.)
+
+    // equal to
+    transform: translate3d(0, 0, 20vh);
+}                   </code></pre>
+                    <p class="box demo-10 demo-slow tallbox">“In my experience there is no such thing as luck.”</p>
+                </section>
+
+                <section>
+                    <h3>Example: Translate + Rotate</h3>
+                    <p></p>
+                    <div id="cube">
+                        <div class="face one">
+                            <code data-trim data-noescape><pre>.face-one {
+    transform: rotateX(90deg); 
+    transform: translateZ(200px);
+}</pre></code>
+                        </div>
+                        <div class="face two">
+                            <code data-trim data-noescape><pre>.face-two {
+    transform: translateZ(200px);
+}</pre></code>
+                        </div>
+                        <div class="face three">
+                            <code data-trim data-noescape><pre>.face-three {
+    transform: rotateY(90deg);
+    transform: translateZ(200px);
+}</pre></code>
+                        </div>
+                        <div class="face four">
+                            <code data-trim data-noescape><pre>.face-four {
+    transform: rotateY(180deg);
+    transform: translateZ(200px);
+}</pre></code>
+                        </div>
+                        <div class="face five">
+                            <code data-trim data-noescape><pre>.face-five {
+    transform: rotateY(-90deg);
+    transform: translateZ(200px);
+}</pre></code>
+                        </div>
+                        <div class="face six">
+                            <code data-trim data-noescape><pre>.face-six {
+    transform: rotateX(-90deg); 
+    transform: rotateZ(180deg);
+    transform: translateZ(200px);
+}</pre></code>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Episode V: Scale</h2>
+                     <pre><code data-trim data-noescape>.scale {
+    transform: scale(x, y); 
+    transform: scaleX(x);
+    transform: scaleY(y);
+}                   </code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Example: ScaleX</h3>
+                     <pre><code data-trim data-noescape>.scale {
+    transform: scale(1.2, 1.1);  
+
+    // equal to
+    transform: scaleX(1.2) scaleY(1.1); 
+}                   </code></pre>
+                    <p class="box demo-11 demo-slow">“In my experience there is no such thing as luck.”</p>
+                </section>
+
+                <section>
+                    <h2 class="demo-12">Episode VI: Perspective</h2>
+
+                </section>
+
+                <section>
+                    <h2>Episode VII: Matrix</h2>
+                </section>
+
+                <section>
+                    <h2>JAZZ?</h2>
+                    <ul>
+                        <li><a href="http://lab.hakim.se/meny/">Jazz menu</a></li>
+                        <li><a href="http://lab.hakim.se/meny/">Jazz confirmation (rotation)</a></li>
+                        <li><a href="http://lab.hakim.se/flexing-pagination/">Jazz hovering</a></li>
+                        <li><a href="http://hakim.se/experiments/css/domtree/">Jazz tree (rotation/translate)</a></li>
+                        <li></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Outro: Browser compatibility*</h3>
+                    <ul>
+                        <li>Norway: 98.49% (90.72%)</li>
+                        <li>Global: 91.85% (74.52%)</li>
+                    </ul>
+                    <pre><code data-trim data-noescape>transform: rotate(20deg)
+-ms-transform:     rotate(20deg)  // IE9 
+-webkit-transform: rotate(20deg)  // iOS Safari 8.4 && Android 4.4.4
+-NOPE-transform:   rotate(nat)    // IE8, Opera Mini 
+                    </code></pre>
+                    <footer></footer>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.js"></script>
+
+        <script>
+
+            // Full list of configuration options available at:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+                // Optional reveal.js plugins
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'plugin/zoom-js/zoom.js', async: true },
+                    { src: 'plugin/notes/notes.js', async: true }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>

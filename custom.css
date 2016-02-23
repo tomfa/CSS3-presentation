@@ -1,0 +1,169 @@
+.demo {
+    transition: transform 0.5s;
+}
+
+p {
+    translateX(25deg);
+}
+
+.demo-slow {
+    transition: transform 1.5s;
+}
+
+.demo-1:hover {
+	transform: skew(-20deg);
+}
+
+.demo-2:hover {
+    transform: skew(0, -25deg);
+}
+
+.demo-3:hover {
+    transform: scaleX(1.1033779) scaleY(1.1033779) rotateZ(-25deg);
+    transform: skew(25deg, -25deg);
+}
+
+.demo-4:hover {
+    transform: rotate(-60deg);
+}
+
+.demo-5:hover {
+    transform: rotateY(-60deg);
+}
+
+.demo-6:hover {
+    transform: rotateX(-60deg);
+}
+
+.demo-7:hover {
+    transform: rotate3d(1, 0, -1, 20deg);
+    transform: rotateX(20deg) rotateZ(-20deg);
+}
+
+p.box.demo-8 {
+    width: 300px;
+}
+
+.demo-8:hover {
+    transform: translateX(50%);
+}
+
+p.box.demo-9 {
+    height: 200px;
+}
+
+.demo-9:hover {
+    transform: translateY(20vh);
+}
+
+.demo-10:hover {
+    transform: translateZ(20vh);
+}
+
+.demo-11:hover {
+    transform: scale(1.2, 1.1);
+}
+
+
+p.box, div.box {
+	border: 0.2rem solid white;
+	background-color: #4F4F4F;
+	width: 100%;
+	display: block;
+	font-size: 1.5rem;
+}
+
+p.tallbox {
+    height: 300px;
+}
+
+
+input.cool-input {
+    display: inline-block;
+    width: 25%;
+    font-size: 3rem;
+    padding: 0.3rem;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.demo-0 {
+    color: #B0B028;
+    padding: 10px;
+    background-color: black;
+    height: 80rem;
+    overflow: hidden;
+    transform: rotateX(80deg);
+    position:relative;
+    top:-100px;
+}
+
+.demo-0-inner {
+    transition: transform 25s linear;
+}
+
+.demo-0:hover > .demo-0-inner {
+    transform: translateY(-100%);
+}
+
+.demo-0 p {
+    padding: 3rem;
+}
+
+
+p {
+    margin-top: 300px;
+}
+
+.demo-0 p:first-child {
+    margin-top: 610px;
+}
+
+/* CUBE stuff */
+#cube {
+  position: relative;
+  margin: 0 auto;
+  height: 400px;
+  width: 400px;
+  transition: transform 18s linear;
+  transform-style: preserve-3d;
+}
+
+#cube:hover {
+    transform: rotate3d(0.1, 1, 0.3,360deg);
+}
+
+#cube .one  {
+  transform: rotateX(90deg) translateZ(200px);
+}
+
+#cube .two {
+  transform: translateZ(200px);
+}
+
+#cube .three {
+  transform: rotateY(90deg) translateZ(200px);
+}
+
+#cube .four {
+  transform: rotateY(180deg) translateZ(200px);
+}
+
+#cube .five {
+  transform: rotateY(-90deg) translateZ(200px);
+}
+
+#cube .six {
+  transform: rotateX(-90deg) translateZ(200px) rotate(180deg);
+}
+
+div.face {
+  font-size: 28px;
+  position: absolute;
+  height: 360px;
+  width: 360px;
+  padding: 20px;
+  background-color: rgba(50, 50, 50, 0.7);
+  border: 1px solid white;
+  margin: 0 !important;
+}
