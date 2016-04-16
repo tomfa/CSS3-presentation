@@ -64,6 +64,23 @@ p.box.demo-9 {
     transform: scale(1.2, 1.1);
 }
 
+.demo-12:hover {
+    perspective: distance;
+    perspective-origin: 150% 150%;
+    transform-style: preserve-3d;
+}
+
+.demo-13:hover {
+    transform: matrix(1, -0.3, 0, 1, 0, 0);  
+}
+
+.demo-14:hover {
+  transform: matrix3d(1, 0, 0, 0,
+                            0, 0.5000000000000001, -0.8660254037844386, 0, 0,
+                            0.8660254037844386, 0.5000000000000001, 0,
+                            0, 0, 0, 1);
+}
+
 
 p.box, div.box {
 	border: 0.2rem solid white;

@@ -4,10 +4,10 @@
     <head>
         <meta charset="utf-8">
 
-        <title>reveal.js – The HTML Presentation Framework</title>
+        <title>CSS3 - Transform functions</title>
 
-        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-        <meta name="author" content="Hakim El Hattab">
+        <meta name="description" content="CSS">
+        <meta name="author" content="Tomas Fagerbekk">
 
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -78,6 +78,7 @@
 
                 <section>
                     <h2>Episode I: Skew</h2>
+                    "Makes it a parallellogram"
                     <pre><code data-trim data-noescape>.skew {
     transform: skew(x, y);
     transform: skewX(x);
@@ -124,6 +125,7 @@
 
                 <section>
                     <h2>Episode II: Rotate</h2>
+                    "Rotates it"
                     <pre><code data-trim data-noescape>.rotate {
     transform: rotate(z);  // equal to rotateZ
     transform: rotate3d(xish, yish, zish, deg):  // skill required
@@ -186,9 +188,6 @@
     // is NOT(!) equal to 
     transform: rotateX(20deg) rotateZ(-20deg)
 
-    // but IS(!) equal to
-    transform: 
-
     // Also note it goes behind the code-tag 
     // (z-index don't matter here, 3d trumps z-index)
 }                   </code></pre>
@@ -197,7 +196,8 @@
                 </section>
 
                 <section>
-                    <h2>Episode IV: Translate</h2>
+                    <h2>Episode III: Translate</h2>
+                    "Moves it"
                     <pre><code data-trim data-noescape>.translate {
     transform: translate(x, y); 
     transform: translate3d(xish, yish, zish, deg):  // skill required
@@ -286,7 +286,8 @@
                 </section>
 
                 <section>
-                    <h2>Episode V: Scale</h2>
+                    <h2>Episode IV: Scale</h2>
+                    "Resizes it"
                      <pre><code data-trim data-noescape>.scale {
     transform: scale(x, y); 
     transform: scaleX(x);
@@ -307,12 +308,52 @@
                 </section>
 
                 <section>
-                    <h2 class="demo-12">Episode VI: Perspective</h2>
-
+                    <h2>Episode V: Perspective</h2>
+                    "Makes it less or more 3d-like" (by <strong>sort of</strong> distance to object)
+                     <pre><code data-trim data-noescape>.perspective {
+    perspective: distance;
+    perspective-origin: x-axis y-axis;
+    transform-style: preserve-3d;  // default: flat
+}                   </code></pre>
                 </section>
 
                 <section>
-                    <h2>Episode VII: Matrix</h2>
+                    <h3>Example: Perspective</h3>
+                     <pre><code data-trim data-noescape>.perspective {
+    perspective: distance;
+    perspective-origin: 150% 150%;
+    transform-style: preserve-3d;
+}                   </code></pre>
+                    Can't illustrate perspective here (reveal.js?). Try <a href="https://desandro.github.io/3dtransforms/examples/perspective-03.html">this</a> instead.
+                </section>
+
+                <section>
+                    <h2>Episode VI: Matrix</h2>
+                    "Write translate functions in a way that's hard to read"
+                     <pre><code data-trim data-noescape>.matrix {
+    transform: matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY());  // 6 values
+    transform: matrix3d(n, n, n, n, n, n, n, n, n, n, n, n, n, n, n);  // 16 values
+}                   </code></pre>
+                </section>
+
+                <section>
+                    <h3>Example: Matrix</h3>
+                    <pre><code data-trim data-noescape>.matrix {
+    transform: matrix(1, -0.3, 0, 1, 0, 0);  
+}                   </code></pre>
+                    <p class="box demo-13 demo-slow">Don't use matrix. It's a computer readable way of expressing the other transform functions. I can't explain why this works.</p>
+                </section>
+
+
+                <section>
+                    <h3>Example: Matrix3d</h3>
+                    <pre><code data-trim data-noescape>.matrix3d {
+    transform: matrix3d(1, 0, 0, 0,
+                            0, 0.5000000000000001, -0.8660254037844386, 0, 0,
+                            0.8660254037844386, 0.5000000000000001, 0,
+                            0, 0, 0, 1);
+}                   </code></pre>
+                    <p class="box demo-14 demo-slow">Don't use matrix3d either. I can't even nothing wat.</p>
                 </section>
 
                 <section>
@@ -322,7 +363,15 @@
                         <li><a href="http://lab.hakim.se/meny/">Jazz confirmation (rotation)</a></li>
                         <li><a href="http://lab.hakim.se/flexing-pagination/">Jazz hovering</a></li>
                         <li><a href="http://hakim.se/experiments/css/domtree/">Jazz tree (rotation/translate)</a></li>
-                        <li></li>
+                    </ul>
+                </section>
+                <section>
+                    <h2>JAZZ!!</h2>
+                    <ul>
+                        <li><a href="http://tympanus.net/Development/CreativeButtons/">Jazz buttons</a></li>
+                        <li><a href="http://tympanus.net/Development/LineMenuStyles/">Jazz menus</a></li>
+                        <li><a href="http://tympanus.net/Development/PricingTablesInspiration/">Jazz pricing tables</a></li>
+                        <li><a href="http://tympanus.net/codrops/category/playground/">More Jazz</a></li>
                     </ul>
                 </section>
 
